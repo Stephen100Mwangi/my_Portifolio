@@ -1,0 +1,894 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #002949;
+}
+.header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100svw;
+    padding: 20px;
+    color: white;
+    background-color: #002949;
+    z-index: 100;
+}
+.header:hover a{
+    opacity: 1;
+}
+.header a{
+    /* color: white; */
+    text-decoration: none;
+    transition: .3s;
+    opacity: .3;
+   
+}
+.header .navbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    gap: 10px;
+    animation: animateNav 5s ease forwards;
+    animation-delay: calc(0.5s * var(--i));
+}
+#logo{
+    font-weight: bold;
+    color: red;
+    animation: animateLeft 2s ease forwards;
+    animation: animateLeft 1s timing-function .5s 10 forwards ease-in-out;
+
+}
+#home{
+    position: relative;
+    color: white;
+    width: 100%;
+    margin-top: 50px;
+    height: 100vh;
+    background: linear-gradient(205deg,black,#002949);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    grid-gap: 20px;
+   
+}
+#homeContent{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 2px 2px 50px lightblue,2px 20px 50px mediumblue;
+}
+#homeContent::before ,#aboutMeImage::before{
+    content: '';
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-image: url(images/myImage.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+
+}
+.homeContainer h2{
+    color: white;
+    font-weight: bold;
+    line-height: 50px;
+}
+.homeContainer h3{
+    color: mediumblue;
+    font-weight: 500;
+    line-height: 25px;
+}
+.homeContainer p{
+    font-weight: 300;
+    line-height: 20px;
+}
+.homeContainer a{
+    text-decoration: none;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 20px;
+    color: #002949;
+}
+.homeContainer a:hover{
+    color: red;
+    box-shadow: 0px 0px 10px lightblue;
+}
+#links{
+    display: flex;
+    gap: 10px;
+}
+#links i a{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+}
+#links i{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 2px solid lightblue;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+#links i:hover{
+    background: lightblue;
+    color: #002949;
+    box-shadow: 0px 0px 10px lightblue;
+}
+.textTrack{
+    color: red;
+}
+@keyframes animateLeft {
+    0%{
+        opacity: .3;
+        transform: translateX(0px);
+    }
+    20%{
+        opacity: .6;
+        transform: translateX(-20px);
+    }
+    40%{
+        opacity: .9;
+        transform: translateX(0px);
+    }
+    60%{
+        opacity: .1;
+        transform: translateX(25px);
+    }
+    80%{
+        opacity: .6;
+        transform: translateX(-30px);
+    }
+    100%{
+        opacity: .8;
+        transform: translateX(-10px);
+    }
+    
+}
+
+
+@keyframes animateNav{
+    0%{
+        opacity: .3;
+    }
+    20%{
+        opacity: .5;
+    }
+    40%{
+        opacity: .7;
+    }
+    60%{
+        opacity: .8;
+    }
+    80%{
+        opacity: .9;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* About Me */
+#aboutMe{
+    background: linear-gradient(-99deg,lightblue,white);
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    
+}
+.aboutText a{
+    text-decoration: none;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 20px;
+    color: #002949;
+
+}
+.hiddenMe{
+    visibility: hidden;
+}
+.aboutText h2{
+    color: #002949;
+    line-height: 55px;
+
+}
+.aboutText h2 span{
+    color: white;
+}
+
+
+/* Services */
+#services{
+    margin: 20px;
+    border: 1px solid #002949;
+    padding: 20px;
+    border-radius: 20px;
+}
+.serviceTitle{
+    line-height: 55px;
+
+}
+.serviceTitle h2{
+    color: white;
+    text-shadow: black;
+    line-height: 55px;
+}
+.serviceTitle h2 span,#popularProjects h2 span,#latestProjects h2 span{
+    color: red;
+}
+.serviceslist{
+    margin: 20px 0px;
+    
+}
+.serviceslist i{
+    color: white;
+    margin: 20px 0px;
+}
+.serviceslist h3{
+    color: red;
+    margin: 20px 0px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.container .serviceslist{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px lightblue;
+}
+.container .serviceslist h3{
+    margin: 10px 0px;
+}
+.container .serviceslist a{
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+.container .serviceslist p{
+    color: white;
+}
+.serviceTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Professional Skills */
+#professionalSkills{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+.radial h2{
+    color: white;
+    text-decoration: underline;
+    line-height: 50px;
+}
+.radial p{
+    line-height: 50px;
+    font-weight: bold;
+}
+
+/* Overall progress background */
+.radial .level{
+    content: '';
+    height: 5px;
+    background-color: white;
+    width: 100px;
+    position: relative;
+    
+}
+
+@keyframes showProgress {
+    0%{
+        width: 0;
+    }
+    10%{
+        width: 10;
+    }
+    20%{
+        width: 20;
+    }
+    30%{
+        width: 30;
+    }
+    40%{
+        width: 40;
+    }
+    50%{
+        width: 50;
+    }
+    60%{
+        width: 60;
+    }
+    70%{
+        width: 70;
+    }
+    80%{
+        width: 80;
+    }
+    90%{
+        width: 90;
+    }
+    100%{
+        width: 100;
+    }
+    
+}
+
+/* HTML */
+.radial .level1::before{
+    content: '';
+    height: 5px;
+    background-color: green;
+    width: 90%;
+    position: absolute;
+    animation: showProgress 5s ease forwards;
+}
+.radial .level1::after{
+    margin: 20px;
+    content: '90%';
+    position: absolute;
+    right: -100px;
+    top: -30px;
+    color: white;
+    
+}
+
+/* CSS */
+.radial .level2::before{
+    content: '';
+    height: 5px;
+    background-color: green;
+    width: 70%;
+    position: absolute;
+    animation: showProgress 5s ease forwards;
+}
+
+.radial .level2::after{
+    margin: 20px;
+    content: '70%';
+    position: absolute;
+    right: -100px;
+    top: -30px;
+    color: white;
+}
+
+/* JavaScript */
+.radial .level3::before{
+    content: '';
+    height: 5px;
+    background-color: green;
+    width: 60%;
+    position: absolute;
+    animation: showProgress 5s ease forwards;
+}
+.radial .level3::after{
+    margin: 20px;
+    content: '60%';
+    position: absolute;
+    right: -100px;
+    top: -30px;
+    color: white;
+}
+
+/* Java */
+.radial .level4::before{
+    content: '';
+    height: 5px;
+    background-color: green;
+    width: 60%;
+    position: absolute;
+    animation: showProgress 5s ease forwards;
+}
+.radial .level4::after{
+    margin: 20px;
+    content: '60%';
+    position: absolute;
+    right: -100px;
+    top: -30px;
+    color: white;
+}
+/* React */
+.radial .level5::before{
+    content: '';
+    height: 5px;
+    background-color: green;
+    width: 50%;
+    position: absolute;
+    animation: showProgress 5s ease forwards;
+}
+.radial .level5::after{
+    margin: 20px;
+    content: '50%';
+    position: absolute;
+    right: -100px;
+    top: -30px;
+    color: white;
+}
+
+.radial p{
+    color: white;
+}
+.radial p i{
+    color: lightblue;
+    margin: 10px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.radial #cardsProfession{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.radial #cardsProfession div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.radial #cardsProfession div h3{
+    color: white;
+}
+#progress{
+    height: 80px;
+    width: 80px;
+    position: relative;
+    border: 5px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+#progress.progress1::after{
+    content: '70%';
+    color: white;
+    font-weight: bold;
+}
+#progress.progress2::after{
+    content: '60%';
+    color: white;
+    font-weight: bold;
+}
+#progress.progress3::after{
+    content: '80%';
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* Projects */
+#latestProjects,#popularProjects{
+    padding: 20px;
+}
+
+
+#latestProjects h2{
+    text-align: center;
+    color: white;
+    margin: 50px;
+}
+#popularProjects h2{
+    text-align: center;
+    color: white;
+    margin: 50px;
+}
+#myProjects{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+#projectCard{
+    height: 300px;
+    width: 240px;
+    border-radius: 20px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* transform: translateX(-500px); */
+    /* visibility: hidden;
+    transition: all 1s;
+    transition-delay: var(--i); */
+}
+#projectCard::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/myImage.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard1::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/weather.png) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard2::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/mukangu.png) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard3::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/headphones.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard4::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/bookfood.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard5::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/color.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard6::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/rotatingImage.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard7::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/movieApp.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+   
+}
+#projectCard.projectCard8::before{
+    content: '';
+    height: 300px;
+    width: 240px;
+    position: absolute;
+    border-radius: 20px;
+    background-image: url(images/colorGen.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+   
+}
+#projectCard:hover p{
+    opacity: 1;
+    transition: 1s;
+}
+#projectCard p{
+    position: absolute;
+    bottom: 10px;
+    opacity: 0;
+}
+#projectCard p a{
+    text-decoration: none;
+}
+#projectCard a img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* Progress */
+
+.progress{
+    height: 110px;
+    width: 110px;
+    position: relative;
+}
+.outer{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.inner{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 1px -1px white,inset 0px 1px 0px 0px white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+circle{
+    fill: none;
+    stroke: green;
+    stroke-width: 15px;
+    stroke-dashoffset: 0;
+}
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.inner div{
+    font-weight: bold;
+    color: red;
+}
+
+    
+
+
+
+/* Contact Me */
+#contactMe h2{
+    text-align: center;
+    color: white;
+}
+#contactMe h2 span{
+    color: red;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+form input,textarea{
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    box-shadow: 1px 1px 1px black,inset 1px 1px 1px #002949;
+    transition: 2.5s;
+    
+}
+form input:focus,form textarea:focus{
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: white;
+    
+}
+form button{
+    padding: 15px;
+    margin: 10px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: green;
+    color: white;
+    width: 50%;
+    align-self: center;
+    
+}
+
+
+
+/* Footer */
+#footer{
+    margin: 20px 0px;
+    padding: 20px;
+    background: linear-gradient(black,#002949);
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+footer h3{
+    list-style: none;
+    line-height: 50px;
+    color: white;
+}
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    text-decoration: none;
+    list-style: none;
+    line-height: 50px;
+    color: white;
+}
+footer i{
+    color: lightblue;
+    margin: 10px;
+}
+
+
+/* Copyroght */
+#copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: white;
+}
+
+
+
+/* Responsive Screen */
+@media screen and (max-width:700px) {
+    *{
+        font-size: .9rem;
+
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+    #home{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        color: white;
+        margin-top: 100px;
+        background: linear-gradient(205deg,black,#002949);
+        padding: 10px;
+        height: fit-content;
+    }
+    #home #homeContent{
+        width: 180px;
+        height: 180px;
+        position: relative;
+        border-radius: 50%;
+        border: 2px solid black;
+        box-shadow: 2px 2px 50px lightblue,2px 20px 50px mediumblue;
+    }
+    #home #homeContent:before,#aboutMeImage::before{
+        content: '';
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        background-image: url(images/myImage.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+    }
+    #aboutMeImage{
+        width: 180px;
+        height: 180px;
+        position: relative;
+        border-radius: 50%;
+        border: 2px solid black;
+        box-shadow: 2px 2px 50px lightblue,2px 20px 50px mediumblue;
+
+    }
+    #aboutMe{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        position: relative;
+        height: fit-content;
+        
+    }
+
+    #services{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    #professionalSkills{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .radial #cardsProfession{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+  
+ 
+}
+
+.active{
+    background-color: white;
+    color: green;
+    transition: 2s ease;
+}
